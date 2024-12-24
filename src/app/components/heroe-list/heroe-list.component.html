@@ -13,8 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            @for (heroe of listadoHeroes; track heroe.id) {
-            <tr>
+            <tr *ngFor="let heroe of listadoHeroes; trackBy: trackById">
                 <th scope="row">{{ heroe.id }}</th>
                 <td>{{ heroe.nombre }}</td>
                 <td>{{ heroe.poder }}</td>
@@ -26,7 +25,7 @@
                     <button (click)="EliminarHeroe(heroe.id)" type="button" class="btn btn-danger">Eliminar</button>
                 </td>
             </tr>
-            }
         </tbody>
+        
     </table>
 </div>
